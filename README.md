@@ -18,3 +18,4 @@ kind create cluster
 
 flux check --pre
 flux bootstrap github   --owner=   --repository=fleet-infra   --branch=main   --path=./clusters/my-cluster   --personal
+
