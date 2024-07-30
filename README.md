@@ -8,7 +8,7 @@ https://fluxcd.io/flux/get-started
 - cli-only, focused on efficiency
 # cons
 - requires cicd system to be set up for app promotions to be secure and effective,
-    i.e. automation workflows to promote apps, some level of custom automation is needed
+    i.e. automation workflows to promote apps, custom automation is needed to fully benefit
 
 # requirements
 A Kubernetes cluster. We recommend Kubernetes kind for trying Flux out in a local development environment.
