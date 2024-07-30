@@ -39,15 +39,13 @@ kustomize create <name> -h --export
 * enables separate flux bootstrapping on cluster-basis (this structure is essentially forced by design)
 ```
 .
-├── common # common resources
 ├── base # base config for overlays
 │   ├── app1
 │   │   ├── deployment.yaml
-│   │   ├── secret.yaml
-│   │   ├── kustomization.yaml # includes `common` resources
+│   │   ├── middleware.yaml
 │   ├── app2
 │   │   ├── deployment.yaml
-│   │   ├── secret.yaml
+│   │   ├── middleware.yaml
 ├── clusters
 │   └── dev
 │       ├── app1
