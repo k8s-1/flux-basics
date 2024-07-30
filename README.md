@@ -27,3 +27,46 @@ flux build kustomization podinfo --path . --kustomization-file ./podinfo-kustomi
 # create a flux kustomization on the fly
 kustomize create <name> -h --export
 ```
+
+# simplified, scalable repository structure
+* base contains base manifests
+* clusters contains clusters (e.g. dev, prod)
+* each cluster folder contains apps folders
+* each app folder contains environment-specific yaml:
+    - flux kustomization
+    - env-specific resources e.g. secret.yaml
+    - kustomization patches for the base config
+* enables separate flux bootstrapping on cluster-basis (this structure is essentially forced by design)
+```
+.
+├── common # common resources
+├── base # base config for overlays
+│   ├── app1
+│   │   ├── deployment.yaml
+│   │   ├── secret.yaml
+│   │   ├── kustomization.yaml # fetches `common` resources
+│   ├── app2
+│   │   ├── deployment.yaml
+│   │   ├── secret.yaml
+├── clusters
+│   └── dev
+│       ├── app1
+│       │   ├── patch-deployment.yaml
+│       │   ├── secret.yaml
+│       │   └── kustomization.yaml
+│       ├── app2
+│       │   ├── patch-deployment.yaml
+│       │   ├── secret.yaml
+│       │   └── kustomization.yaml
+│   └── prod
+│       ├── app1
+│       │   ├── patch-deployment.yaml
+│       │   ├── secret.yaml
+│       │   └── kustomization.yaml
+│       ├── app2
+│       │   ├── patch-deployment.yaml
+│       │   ├── secret.yaml
+│       │   └── kustomization.yaml
+└── README.md
+```
+
