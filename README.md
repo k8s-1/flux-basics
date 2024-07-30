@@ -6,6 +6,7 @@ https://fluxcd.io/flux/get-started
 # pros
 - highly scalable
 - cli-only, focused on efficiency
+- designed to integrate with flagger https://fluxcd.io/flagger/tutorials/traefik-progressive-delivery/#automated-canary-promotion
 # cons
 - requires cicd system to be set up for app promotions to be secure and effective,
     i.e. automation workflows to promote apps, custom automation is needed to fully benefit
