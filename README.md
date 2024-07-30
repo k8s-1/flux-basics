@@ -5,10 +5,11 @@ https://fluxcd.io/flux/get-started
 # comparison to similar tools (ArgoCD)
 # pros
 - highly scalable
-- cli-only, focused on efficiency and automation, avoids clickops UI altogether
+- cli-only, focused on efficiency and automation over clickops
 - designed to integrate with other CNCF projects like flagger and istio https://fluxcd.io/flagger/tutorials/traefik-progressive-delivery/#automated-canary-promotion
 - flagger can then automate the entire release process with canary tests https://fluxcd.io/flagger/usage/how-it-works/
 - https://fluxcd.io/flux/#flux-works-well-with
+- does not come with a ui, ui requires another integration e.g. weave/capacitor
 # cons
 - requires cicd system to be set up for app promotions to be secure and effective,
     i.e. automation workflows to promote apps, or integration with flagger is needed to fully benefit
