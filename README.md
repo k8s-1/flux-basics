@@ -5,12 +5,13 @@ https://fluxcd.io/flux/get-started
 # comparison to similar tools (ArgoCD)
 # pros
 - highly scalable
-- cli-only, focused on efficiency
+- cli-only, focused on efficiency and automation, avoids clickops UI altogether
 - designed to integrate with other CNCF projects like flagger and istio https://fluxcd.io/flagger/tutorials/traefik-progressive-delivery/#automated-canary-promotion
 - flagger can then automate the entire release process with canary tests https://fluxcd.io/flagger/usage/how-it-works/
+- https://fluxcd.io/flux/#flux-works-well-with
 # cons
 - requires cicd system to be set up for app promotions to be secure and effective,
-    i.e. automation workflows to promote apps, custom automation is needed to fully benefit
+    i.e. automation workflows to promote apps, or integration with flagger is needed to fully benefit
 
 # requirements
 A Kubernetes cluster. We recommend Kubernetes kind for trying Flux out in a local development environment.
