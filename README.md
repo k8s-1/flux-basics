@@ -37,6 +37,7 @@ kustomize create <name> -h --export
     - env-specific resources e.g. secret.yaml
     - kustomization patches for the base config
 * enables separate flux bootstrapping on cluster-basis (this structure is essentially forced by design)
+* each tenant/team/app should be reconciled by its own Kustomization, flux was designed this way (stefanprodan - flux maintainer)
 ```
 .
 ├── base # base config for overlays
