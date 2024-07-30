@@ -19,3 +19,11 @@ kind create cluster
 flux check --pre
 flux bootstrap github   --owner=   --repository=fleet-infra   --branch=main   --path=./clusters/my-cluster   --personal
 
+# useful commands
+```
+# preview what flux will build -> similar to kustomize build .
+flux build kustomization podinfo --path . --kustomization-file ./podinfo-kustomization.yaml --dry-run
+
+# create a flux kustomization on the fly
+kustomize create <name> -h --export
+```
