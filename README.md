@@ -44,7 +44,7 @@ kustomize create <name> -h --export
 │   ├── app1
 │   │   ├── deployment.yaml
 │   │   ├── secret.yaml
-│   │   ├── kustomization.yaml # fetches `common` resources
+│   │   ├── kustomization.yaml # includes `common` resources
 │   ├── app2
 │   │   ├── deployment.yaml
 │   │   ├── secret.yaml
