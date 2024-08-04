@@ -30,7 +30,7 @@ curl -s https://fluxcd.io/install.sh | sudo bash
 kind create cluster
 
 flux check --pre
-flux bootstrap github   --owner=   --repository=fleet-infra   --branch=main   --path=./clusters/my-cluster   --personal
+flux bootstrap github   --owner="${GITHUB_USER}"   --repository=fleet-infra   --branch=main   --path=./clusters/my-cluster   --personal
 
 # useful commands
 ```
