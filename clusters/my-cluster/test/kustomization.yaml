@@ -3,3 +3,4 @@ kind: Kustomization
 namespace: default
 resources:
 - deploy.yaml
+- basic-auth.yaml

@@ -7,7 +7,7 @@ spec:
   interval: 60m
   path: ./clusters/my-cluster/test
   prune: true
-  # decryption:
-  #   provider: sops
-  #   secretRef:
-  #     name: sops-age
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-age
