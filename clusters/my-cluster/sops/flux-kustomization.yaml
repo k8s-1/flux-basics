@@ -5,6 +5,9 @@ metadata:
   namespace: flux-system
 spec:
   targetNamespace: default
+  sourceRef:
+    kind: GitRepository
+    name: flux-basics
   interval: 60m
   path: ./clusters/my-cluster/sops
   prune: true
