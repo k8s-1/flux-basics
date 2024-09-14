@@ -1,17 +1,17 @@
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-kind: Kustomization
-metadata:
-  name: sops
-  namespace: flux-system
-spec:
-  targetNamespace: default
-  sourceRef:
-    kind: GitRepository
-    name: sops
-  interval: 60m
-  path: ./clusters/my-cluster/sops
-  prune: true
-  decryption:
-    provider: sops
-    secretRef:
-      name: sops-age
+# apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+# kind: Kustomization
+# metadata:
+#   name: sops
+#   namespace: flux-system
+# spec:
+#   targetNamespace: default
+#   sourceRef:
+#     kind: GitRepository
+#     name: sops
+#   interval: 60m
+#   path: ./clusters/my-cluster/sops
+#   prune: true
+#   decryption:
+#     provider: sops
+#     secretRef:
+#       name: sops-age
