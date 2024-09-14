@@ -11,9 +11,9 @@ spec:
   prune: true # remove stale resources from cluster
   force: false # enable this to recreate resources on immutable fields changes
   targetNamespace: sops # set the namespace for all resources
-  sourceRef:
-    kind: GitRepository
-    name: sops
+  # sourceRef:
+  #   kind: GitRepository
+  #   name: sops
   path: "./apps/base/sops"
   decryption:
     provider: sops
