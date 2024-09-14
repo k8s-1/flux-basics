@@ -14,9 +14,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: sops
-  interval: 60m
   path: "./apps/base/sops"
-  prune: true
   decryption:
     provider: sops
     secretRef:
