@@ -7,7 +7,7 @@ spec:
   targetNamespace: default
   sourceRef:
     kind: GitRepository
-    name: flux-basics
+    name: sops
   interval: 60m
   path: ./clusters/my-cluster/sops
   prune: true
