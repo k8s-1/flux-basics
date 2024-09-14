@@ -1,9 +1,11 @@
 #!/bin/bash
 
 # generate age key
+rm -i age.agekey
 age-keygen -o age.agekey
 
 # create decryption secret
+kubectl delete secret sops-age -n flux-system
 kubectl create secret generic sops-age \
     --namespace=flux-system \
     --from-file=age.agekey
