@@ -53,32 +53,46 @@ kustomize create <name> -h --export
 * each tenant/team/app should be reconciled by its own Kustomization, flux was designed this way (stefanprodan - flux maintainer)
 ```
 .
-├── base # base config for overlays
-│   ├── app1
-│   │   ├── deployment.yaml
-│   │   ├── middleware.yaml
-│   ├── app2
-│   │   ├── deployment.yaml
-│   │   ├── middleware.yaml
+├── apps
+│   ├── base
+│   │   └── podinfo
+│   │       ├── kustomization.yaml
+│   │       ├── namespace.yaml
+│   │       ├── release.yaml
+│   │       └── repository.yaml
+│   ├── production
+│   │   ├── kustomization.yaml
+│   │   └── podinfo-values.yaml
+│   └── staging
+│       ├── kustomization.yaml
+│       └── podinfo-values.yaml
 ├── clusters
-│   └── dev
-│       ├── app1
-│       │   ├── patch-deployment.yaml
-│       │   ├── secret.yaml
+│   ├── production
+│   │   ├── apps.yaml
+│   │   ├── flux-system
+│   │   │   ├── gotk-components.yaml
+│   │   │   ├── gotk-sync.yaml
+│   │   │   └── kustomization.yaml
+│   │   └── infrastructure.yaml
+│   └── staging
+│       ├── apps.yaml
+│       ├── flux-system
+│       │   ├── gotk-components.yaml
+│       │   ├── gotk-sync.yaml
 │       │   └── kustomization.yaml
-│       ├── app2
-│       │   ├── patch-deployment.yaml
-│       │   ├── secret.yaml
-│       │   └── kustomization.yaml
-│   └── prod
-│       ├── app1
-│       │   ├── patch-deployment.yaml
-│       │   ├── secret.yaml
-│       │   └── kustomization.yaml
-│       ├── app2
-│       │   ├── patch-deployment.yaml
-│       │   ├── secret.yaml
-│       │   └── kustomization.yaml
-└── README.md
+│       └── infrastructure.yaml
+├── env.sh
+├── infrastructure
+│   ├── configs
+│   │   ├── cluster-issuers.yaml
+│   │   └── kustomization.yaml
+│   └── controllers
+│       ├── cert-manager.yaml
+│       ├── ingress-nginx.yaml
+│       └── kustomization.yaml
+├── LICENSE
+├── README.md
+└── scripts
+    └── validate.sh
 ```
 
