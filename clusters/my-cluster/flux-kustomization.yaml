@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 60m
-  path: ./clusters/my-cluster/sops
+  path: ./clusters/my-cluster
   prune: true
   decryption:
     provider: sops
